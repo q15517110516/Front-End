@@ -11,7 +11,7 @@ const draw = (props) => {
     const margin = {top: 20, right: 20, bottom: 30, left: 40};
     const width = props.width - margin.left - margin.right;
     const height = props.height - margin.top - margin.bottom;
-    let svg = d3.select('./vis-linechart')
+    let svg = d3.select('.vis-linechart')
                 .append('svg')
                 .attr('width', width + margin.left + margin.right)
                 .attr('height', height + margin.top + margin.bottom)
@@ -55,7 +55,7 @@ const draw = (props) => {
                         })
                         .y(function(d){
                             return y(d.count)
-                        })
+                        }))
                 
             
 }

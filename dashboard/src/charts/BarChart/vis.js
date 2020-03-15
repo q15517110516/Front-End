@@ -7,7 +7,7 @@ const draw = (props) => {
     const margin = {top: 20, right: 20, bottom: 30, left: 40};
     const width = props.width - margin.left - margin.right;
     const height = props.height - margin.top - margin.bottom;
-    let svg = d3.select('./vis-barchart').append('svg')
+    let svg = d3.select('.vis-barchart').append('svg')
                 .attr('width', width + margin.left + margin.right)
                 .attr('height', height + margin.top + margin.bottom)
                 .append("g")
@@ -46,14 +46,14 @@ const draw = (props) => {
                         return y(d.age);
                     })
                     .attr("height", function(d){
-                        return hright - y(d.age);
+                        return height - y(d.age);
                     });
                 
 
                 //add the x Axis
                 svg.append("g")
                     .attr("transform", "translate(0," + height + ")")
-                    .cal(d3.axisBottom(x));
+                    .call(d3.axisBottom(x));
 
                 //add the y Axis
                 svg.append("g")

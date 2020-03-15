@@ -1,0 +1,14 @@
+.pane {
+    background: #fff;
+    border: solid 1px #fff;
+    margin: 5px, 5px, 5px, 5px;
+    border-radius: 5px;
+}
+
+.header {
+    background-color: #eee;
+    margin: 5px;
+    padding: 4px, 0px, 0px, 10px;
+    border-radius: 5px;
+    height: 30px;
+}
