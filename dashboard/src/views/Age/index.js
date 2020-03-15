@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './view5.css';
+import './Age.css';
 import '../../charts/BarChart';
 import BarChart from '../../charts/BarChart';
 
-export class index extends Component {
+export class Age extends Component {
     render() {
         const {data} = this.props;
         return (
@@ -18,4 +18,4 @@ export class index extends Component {
     }
 }
 
-export default index
+export default Age;

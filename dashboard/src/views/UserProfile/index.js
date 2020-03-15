@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Avatar } from 'antd';
-import './view1.css';
+import './UserProfile.css';
 
-export class View1 extends Component {
+export class UserProfile extends Component {
     render() {
 
         let { user } = this.props;
@@ -32,4 +32,4 @@ export class View1 extends Component {
     }
 }
 
-export default View1;
+export default UserProfile;

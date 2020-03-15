@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Slider, Checkbox, Divider } from 'antd';
-import './view3.css';
+import './Filter.css';
 
 const CheckboxGroup = Checkbox.Group;
 
 const plainOptions = ['Male', 'Female', 'Unknown'];
 const defaultCheckedList = ['Male', 'Female', 'Unknown'];
 
-export class index extends Component {
+export class Filter extends Component {
 
     constructor(props){
         super(props);
@@ -70,4 +70,4 @@ export class index extends Component {
     }
 }
 
-export default index
+export default Filter;

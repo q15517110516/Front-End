@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './view4.css';
+import './UserActivities.css';
 import LineChart from '../../charts/LineChart';
 
-export class View4 extends Component {
+export class UserActivities extends Component {
     render() {
         const {user} = this.props;
         return (
@@ -17,4 +17,4 @@ export class View4 extends Component {
     }
 }
 
-export default View4;
+export default UserActivities;

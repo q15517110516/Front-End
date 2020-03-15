@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import data from './data';
 import { Layout } from 'antd';
-import View1 from './views/View1';
-import View2 from './views/View2';
-import View3 from './views/View3';
-import View4 from './views/View4';
-import View5 from './views/View5';
-import View6 from './views/View6';
+import UserProfile from './views/UserProfile';
+import Gender from './views/Gender';
+import Filter from './views/Filter';
+import UserActivities from './views/UserActivities';
+import Age from './views/Age';
+import UserList from './views/UsreList';
 import './dashboard.css';
 
 const { Sider, Content, Footer } = Layout;
@@ -49,37 +49,29 @@ export class Dashboard extends Component {
         <Layout style={{ height: 920 }}>
           <Sider width={300} style={{ backgroundColor: '#eee'}}>
             <Content style={{ height: 200}}>
-              <View1 user={selectedUser}/>
+              <UserProfile user={selectedUser}/>
             </Content>
             <Content style={{ height: 300}}>
-              <View2 data={filteredData}/>
+              <Gender data={filteredData}/>
             </Content>
             <Content style={{ height: 400}}>
-              <View3 changeGreaterThenAge={this.changeGreaterThenAge}
+              <Filter changeGreaterThenAge={this.changeGreaterThenAge}
                       changeIncludedGender={this.changeIncludedGender}/>
             </Content>
           </Sider>
           <Layout>
             <Content style={{ height: 300}}>
-              <View4 user={selectedUser}/>
+              <UserActivities user={selectedUser}/>
             </Content>
             <Layout style={{ height: 600 }}>
               <Content>
-                <View5 data={filteredData}/>
+                <Age data={filteredData}/>
               </Content>
               <Sider width={300} style={{ backgroundColor: "#eee" }}>
-                <View6 data={filteredData} changeSelectUser={this.changeSelectUser}/>
+                <UserList data={filteredData} changeSelectUser={this.changeSelectUser}/>
               </Sider>
             </Layout>
           </Layout>
-        </Layout>
-        <Layout>
-          <Footer style={{ height: 20 }}>
-            <div style={{ marginTop: -10}}>
-              Source Code <a href='https://github.com'>Github</a>;
-              Author <a href='https://sdq.ai'>sdq</a>
-            </div>
-          </Footer>
         </Layout>
         
       </div>

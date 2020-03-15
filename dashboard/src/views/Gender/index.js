@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PieChart from '../../charts/PieChart';
-import './view2.css';
+import './Gender.css';
 
-export class View2 extends Component {
+export class Gender extends Component {
     render() {
         const {data} = this.props;
         return (
@@ -15,4 +15,4 @@ export class View2 extends Component {
     }
 }
 
-export default View2;
+export default Gender;

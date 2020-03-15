@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './view6.css';
+import './UserList.css';
 import { List } from 'antd';
 
-export class index extends Component {
+export class UserList extends Component {
 
     selectUser = (user) => {
         this.props.changeSelectUser(user);
@@ -27,4 +27,4 @@ export class index extends Component {
     }
 }
 
-export default index
+export default UserList;
