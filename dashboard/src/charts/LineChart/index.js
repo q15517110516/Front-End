@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import draw from './vis';
+import draw from './linechart';
 
 export class LineChart extends Component {
 
@@ -12,7 +12,7 @@ export class LineChart extends Component {
     }
     render() {
         return (
-            <div className="vis-linechart" />
+            <div className="linechart" />
         )
     }
 }

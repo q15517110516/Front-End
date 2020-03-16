@@ -1,0 +1,12 @@
+.dot,
+.mouseover,
+.mouseout {
+    fill: #ffab00;
+    stroke: #fff;
+}
+
+.line {
+    fill: none;
+    stroke: #ffab00;
+    stroke-width: 3;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import draw from './vis';
+import draw from './barchart';
 
 export class BarChart extends Component {
 

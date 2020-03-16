@@ -9,7 +9,7 @@ import Age from './views/Age';
 import UserList from './views/UsreList';
 import './dashboard.css';
 
-const { Sider, Content, Footer } = Layout;
+const { Sider, Content } = Layout;
 
 export class Dashboard extends Component {
 
