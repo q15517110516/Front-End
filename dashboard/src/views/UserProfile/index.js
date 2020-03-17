@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Avatar } from 'antd';
 import './UserProfile.css';
 
+
 export class UserProfile extends Component {
     render() {
 
@@ -18,9 +19,8 @@ export class UserProfile extends Component {
                 <div className="header">User Profile</div>
                 <div className="profile">
                     <div className={'avatar-view'}>
-                        {/*<Avatar shape="square" size={120} icon="user"/>*/}
-                        <img src="Mike.jpg" alt="Mike" width="120" height="120"/>
-
+                        <Avatar shape="square" size={120} icon="user"/>
+                        
                     </div>
                     <div className={'info-view'}>
                         <div>Name: {user.name}</div>
