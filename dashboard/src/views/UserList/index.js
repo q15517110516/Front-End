@@ -13,12 +13,12 @@ export class UserList extends Component {
             <div id="view6" className="pane">
                 <div className="header">User List</div>
                 <List size="small" 
-                bordered 
+                bordered
                 dataSource={data}
                 renderItem={user => 
-                    <List.Item onClick={() => this.selectUser(user)}>
+                    <List.Item className="user" onClick={() => this.selectUser(user)}>
                         <div>
-                            {user.name + ':' + user.age}
+                            { `${user.name} Age: ${user.age}`}
                         </div>
                     </List.Item>}
                 />       

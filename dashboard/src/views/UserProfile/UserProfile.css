@@ -2,6 +2,10 @@
     height: 200px;
 }
 
+.profile {
+    display: flex;
+}
+
 .avatar-view {
     float: left;
     margin-left: 10px;

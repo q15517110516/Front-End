@@ -3,6 +3,8 @@ const data = [
         'name': 'Mike',
         'gender': 'Male',
         'age': 33,
+        'phone': 3016281712,
+        'email': 'mike@gmail.com',
         'activities': [
             { "date": "2020-1-3", "count": Math.round(Math.random() * 100)},
             { "date": "2020-1-4", "count": Math.round(Math.random() * 100)},
@@ -24,6 +26,8 @@ const data = [
         'name': 'Bob',
         'gender': 'Female',
         'age': 40,
+        'phone': 5035738829,
+        'email': 'bob@gmail.com',
         'activities': [
             { "date": "2020-1-3",  "count": Math.round(Math.random() * 100)},
             { "date": "2020-1-4",  "count": Math.round(Math.random() * 100)},
@@ -45,6 +49,8 @@ const data = [
         'name': 'Jenny',
         'gender': 'Unknown',
         'age': 29,
+        'phone': 9487321093,
+        'email': 'jenny@gmail.com',
         'activities': [
             { "date": "2020-1-3", "count": Math.round(Math.random() * 100)},
             { "date": "2020-1-4", "count": Math.round(Math.random() * 100)},

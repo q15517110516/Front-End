@@ -1,13 +1,13 @@
 .dot,
 .mouseover,
 .mouseout {
-    fill: #ffab00;
+    fill: dodgerblue;
     stroke: #fff;
 }
 
 .line {
     fill: none;
-    stroke: #ffab00;
+    stroke: dodgerblue;
     stroke-width: 3;
 }
 
@@ -22,10 +22,4 @@
     border: 0px;
     border-radius: 5px;
     pointer-events: none;
-}
-
-.xline {
-    stroke: blue;
-    /* stroke-dasharray: 3, 3; */
-    /* opacity: 0.5; */
 }

@@ -12,6 +12,7 @@ const draw = (props) => {
     let margin = {top: 20, right: 20, bottom: 30, left: 40};
     const width = props.width - margin.left - margin.right;
     const height = props.height - margin.top - margin.bottom;
+    const radius = 4;
 
     // Set tooltip to show the data
     let tooltip = d3.select("body")
@@ -42,7 +43,7 @@ const draw = (props) => {
         
         d3.select(this)
             .attr("class", "mouseover")
-            .attr("r", 6);
+            .attr("r", radius * 2);
             
         tooltip.transition()
             .duration(200)
@@ -58,13 +59,11 @@ const draw = (props) => {
     function handleMouseOut(d){
         d3.select(this)
             .attr("class", "mouseout")
-            .attr("r", 3);
+            .attr("r", radius);
         tooltip.transition()
                 .duration(500)
                 .style("opacity", 0)
                 
-
-        // d3.select("#t" + d.count + i).remove();
     }
 
     //Add X axis --> it is a date format
@@ -84,7 +83,7 @@ const draw = (props) => {
             })])
             .range([height,0]);
     svg.append("g")
-        .call(d3.axisLeft(yScale));
+        .call(d3.axisLeft(yScale).ticks(5));
 
     
     //Add the line
@@ -114,12 +113,9 @@ const draw = (props) => {
         .attr("cy", function(d){
             return yScale(d.count);
         })
-        .attr("r", 3)
+        .attr("r", radius)
         .on("mouseover", handleMouseOver)
         .on("mouseout", handleMouseOut);
-
-    // Append x line when focus 
-    
 }
     
 

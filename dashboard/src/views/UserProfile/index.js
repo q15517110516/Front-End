@@ -16,14 +16,19 @@ export class UserProfile extends Component {
         return (
             <div id='view1' className="pane">
                 <div className="header">User Profile</div>
-                <div>
+                <div className="profile">
                     <div className={'avatar-view'}>
-                        <Avatar shape="square" size={120} icon="user"/>
+                        {/*<Avatar shape="square" size={120} icon="user"/>*/}
+                        <img src="Mike.jpg" alt="Mike" width="120" height="120"/>
+
                     </div>
                     <div className={'info-view'}>
-                        <div>name: {user.name}</div>
-                        <div>gender: {user.gender}</div>
-                        <div>age: {user.age}</div>
+                        <div>Name: {user.name}</div>
+                        <div>Gender: {user.gender}</div>
+                        <div>Age: {user.age}</div>
+                        <div>Contact Number: {user.phone}</div>
+                        <div>Email: {user.email}</div>
+
                     </div>
                 </div>
                 
