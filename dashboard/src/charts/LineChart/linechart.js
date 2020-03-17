@@ -4,40 +4,23 @@ import "./style.css";
 
 const draw = (props) => {
     let data = [];
-    if(props.data != null){
+    if(props.data !== null){
         data = _.cloneDeep(props.data.activities);
     }
 
-    d3.select('.vis-linechart > *').remove();
-    const margin = {top: 20, right: 20, bottom: 30, left: 40};
+    d3.select('.linechart > *').remove();
+    let margin = {top: 20, right: 20, bottom: 30, left: 40};
     const width = props.width - margin.left - margin.right;
     const height = props.height - margin.top - margin.bottom;
 
-    function handleMouseOver(d, i){
-        d3.select(this)
-            .attr("class", "mouseover")
-            .attr("r", 6);
-
-        svg.select(this)
-            .selectAll("text")
-            .data(data)
-            .enter()
-            .append("text")
-            .text(function(d){
-                return d[1];
-            })
-            .attr("y", function(d){
-                return d[1];
-            })
-    }
-
-    function handleMouseOut(d, i){
-        d3.select(this)
-            .attr("class", "mouseout")
-            .attr("r", 3);
-
-        // d3.select("#t" + d.count + i).remove();
-    }
+    // Set tooltip to show the data
+    let tooltip = d3.select("body")
+                    .append("div")
+                    .attr("class", "tooltip")
+                    .style("opacity", 0);
+                    
+    
+    
     let svg = d3.select('.linechart')
                 .append('svg')
                 .attr('width', width + margin.left + margin.right)
@@ -45,11 +28,44 @@ const draw = (props) => {
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    // Change time format
+    var formatTime = d3.timeFormat("%e %B");
 
     data.forEach(function(d){
+        
         d.date = d3.timeParse("%Y-%m-%d")(d.date);
         d.count = +d.count;
     });
+    
+    // Add mouseover events 
+    function handleMouseOver(d){
+        
+        d3.select(this)
+            .attr("class", "mouseover")
+            .attr("r", 6);
+            
+        tooltip.transition()
+            .duration(200)
+            .style("opacity", 0.9);        
+        tooltip.html(formatTime(d.date) + "<br />" + d.count)
+            .style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY) + "px");
+    
+    console.log(d.count)
+    }
+
+    // Add mouseout events
+    function handleMouseOut(d){
+        d3.select(this)
+            .attr("class", "mouseout")
+            .attr("r", 3);
+        tooltip.transition()
+                .duration(500)
+                .style("opacity", 0)
+                
+
+        // d3.select("#t" + d.count + i).remove();
+    }
 
     //Add X axis --> it is a date format
     let xScale = d3.scaleTime()
@@ -74,19 +90,17 @@ const draw = (props) => {
     //Add the line
     svg.append("path")
         .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "steelblue")
-        .attr("stroke-width", 1.5)
+        .attr("class", "line")
         .attr("d", d3.line()
             .x(function(d){
-                return xScale(d.date)
+                return xScale(d.date);
             })
-            .y((function(d){
-                return yScale(d.count)
-            }))
+            .y(function(d){
+                return yScale(d.count);
+            })
             .curve(d3.curveMonotoneX)
-            )
-        .attr("class", "line")
+            );
+        
 
     // Appends a circle for each datapoint
     svg.selectAll(".dot")
@@ -95,17 +109,17 @@ const draw = (props) => {
         .append("circle")
         .attr("class", 'dot')
         .attr("cx", function(d){
-            return xScale(d.date)
+            return xScale(d.date);
         })
         .attr("cy", function(d){
-            return yScale(d.count)
+            return yScale(d.count);
         })
         .attr("r", 3)
         .on("mouseover", handleMouseOver)
         .on("mouseout", handleMouseOut);
 
-    // onClick when move mouse on the circle
-
+    // Append x line when focus 
+    
 }
     
 

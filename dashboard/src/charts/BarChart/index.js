@@ -7,7 +7,7 @@ export class BarChart extends Component {
         draw(this.props);
     }
 
-    componentDidUpdate(){
+    componentDidUpdate(preProps){
         draw(this.props);
     }
     render() {

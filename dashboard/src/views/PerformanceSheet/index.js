@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './UserActivities.css';
+import './PerformanceSheet.css';
 import LineChart from '../../charts/LineChart';
 
-export class UserActivities extends Component {
+export class PerformanceSheet extends Component {
     render() {
         const {user} = this.props;
         return (
             <div id="view4" className="pane">
-                <div className="header">User Activities</div>
+                <div className="header">Performance Sheet</div>
                 <div style={{ overflowX: 'scroll', overflowY: 'hidden' }}>
                     <LineChart data={user} width={1100} height={250}/>
                 </div>
@@ -17,4 +17,4 @@ export class UserActivities extends Component {
     }
 }
 
-export default UserActivities;
+export default PerformanceSheet;

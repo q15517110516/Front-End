@@ -4,9 +4,9 @@ import { Layout } from 'antd';
 import UserProfile from './views/UserProfile';
 import Gender from './views/Gender';
 import Filter from './views/Filter';
-import UserActivities from './views/UserActivities';
+import PerformanceSheet from './views/PerformanceSheet';
 import Age from './views/Age';
-import UserList from './views/UsreList';
+import UserList from './views/UserList';
 import './dashboard.css';
 
 const { Sider, Content } = Layout;
@@ -61,7 +61,7 @@ export class Dashboard extends Component {
           </Sider>
           <Layout>
             <Content style={{ height: 300}}>
-              <UserActivities user={selectedUser}/>
+              <PerformanceSheet user={selectedUser}/>
             </Content>
             <Layout style={{ height: 600 }}>
               <Content>
