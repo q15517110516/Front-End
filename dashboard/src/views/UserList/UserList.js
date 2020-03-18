@@ -12,8 +12,7 @@ export class UserList extends Component {
         return (
             <div id="view6" className="pane">
                 <div className="header">User List</div>
-                <List size="small" 
-                bordered
+                <List className="list"
                 dataSource={data}
                 renderItem={user => 
                     <List.Item className="user" onClick={() => this.selectUser(user)}>

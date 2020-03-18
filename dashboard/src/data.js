@@ -1,10 +1,12 @@
 const data = [
     {
-        'name': 'Mike',
+        'name': 'Deadshot',
         'gender': 'Male',
         'age': 33,
+        "ID": 4326874632,
         'phone': 3016281712,
-        'email': 'mike@gmail.com',
+        'email': 'deadshot@gmail.com',
+        'img': 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTbDgTxLp4IEGCs266JHf5eXxwCed1XSRi3Cv1gj1iK6oyk_1KY',
         'activities': [
             { "date": "2020-1-3", "count": Math.round(Math.random() * 100)},
             { "date": "2020-1-4", "count": Math.round(Math.random() * 100)},
@@ -23,11 +25,13 @@ const data = [
         ]
     },
     {
-        'name': 'Bob',
+        'name': 'Huntress',
         'gender': 'Female',
         'age': 40,
+        "ID": 3817492717,
         'phone': 5035738829,
-        'email': 'bob@gmail.com',
+        'email': 'huntress@gmail.com',
+        'img': 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS22mfXtQ70LJI0ZJjyAW8A72eGhHpCRHsa2apDknKh3kg28wcN',
         'activities': [
             { "date": "2020-1-3",  "count": Math.round(Math.random() * 100)},
             { "date": "2020-1-4",  "count": Math.round(Math.random() * 100)},
@@ -46,11 +50,13 @@ const data = [
         ]
     },
     {
-        'name': 'Jenny',
+        'name': 'Reverse Flash',
         'gender': 'Unknown',
         'age': 29,
+        "ID": 7471945724,
         'phone': 9487321093,
-        'email': 'jenny@gmail.com',
+        'email': 'reverseflash@gmail.com',
+        'img': 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQX87yQwT2CjCcqqPLwdbxhA0HqZWYa0todbuvkDq4e9-SWXX0Z',
         'activities': [
             { "date": "2020-1-3", "count": Math.round(Math.random() * 100)},
             { "date": "2020-1-4", "count": Math.round(Math.random() * 100)},

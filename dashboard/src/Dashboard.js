@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import data from './data';
-import { Layout } from 'antd';
-import UserProfile from './views/UserProfile';
-import Gender from './views/Gender';
-import Filter from './views/Filter';
-import PerformanceSheet from './views/PerformanceSheet';
-import Age from './views/Age';
-import UserList from './views/UserList';
+import UserProfile from './views/UserProfile/UserProfile';
+import Gender from './views/Gender/Gender';
+import Filter from './views/Filter/Filter';
+import PerformanceSheet from './views/PerformanceSheet/PerformanceSheet';
+import Age from './views/Age/Age';
+import UserList from './views/UserList/UserList';
 import './dashboard.css';
 
-const { Sider, Content } = Layout;
+
 
 export class Dashboard extends Component {
 
@@ -44,35 +43,45 @@ export class Dashboard extends Component {
     const {selectedUser, greaterThenAge, includedGender} = this.state;
     const filteredData = data.filter(user=>includedGender.indexOf(user.gender) !== -1)
                               .filter(user=>user.age > greaterThenAge);
+
     return (
       <div>
-        <Layout style={{ height: 920 }}>
-          <Sider width={300} style={{ backgroundColor: '#eee'}}>
-            <Content style={{ height: 200}}>
+        <div className="flex-container">
+          
+          {/* Sider flexbox */}
+          <div className="sider">
+            <div className="userprofile">
               <UserProfile user={selectedUser}/>
-            </Content>
-            <Content style={{ height: 300}}>
+            </div>
+            <div className="usergender">
               <Gender data={filteredData}/>
-            </Content>
-            <Content style={{ height: 400}}>
+            </div>
+            <div className="genderfilter">
               <Filter changeGreaterThenAge={this.changeGreaterThenAge}
                       changeIncludedGender={this.changeIncludedGender}/>
-            </Content>
-          </Sider>
-          <Layout>
-            <Content style={{ height: 300}}>
-              <PerformanceSheet user={selectedUser}/>
-            </Content>
-            <Layout style={{ height: 600 }}>
-              <Content>
+            </div>
+          </div>
+
+          {/* Content flexbox */}
+          <div className="content">
+            
+            <div className="content1">
+              <div className="performancesheet">
+                <PerformanceSheet user={selectedUser}/>
+              </div>
+            </div>
+
+          
+            <div className="content2">
+              <div className="userage">
                 <Age data={filteredData}/>
-              </Content>
-              <Sider width={300} style={{ backgroundColor: "#eee" }}>
+              </div>
+              <div className="userlist">
                 <UserList data={filteredData} changeSelectUser={this.changeSelectUser}/>
-              </Sider>
-            </Layout>
-          </Layout>
-        </Layout>
+              </div>
+            </div>
+          </div>
+        </div>
         
       </div>
     )

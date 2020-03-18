@@ -9,3 +9,9 @@
 .user:active {
     background-color: rgb(231, 230, 230);
 }
+
+.list {
+    border: solid 2px #eee;
+    border-radius: 5px;
+    padding: 5px;
+}
