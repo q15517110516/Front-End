@@ -1,13 +1,24 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react';
 
-export class BasicInfo extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
-}
+// class BasicInfo extends Component {
+    
+//     render() {
+//         let { user } = this.props;
+//         if (user == null){
+//             user = {
+//                 name: 'null',
+//                 gender: 'null',
+//                 age: 'null',
+//             }
+//         }
+//         return (
+//             <div>
+        
+            
+//                 <div>Name: {user.name}</div>
+//             </div>
+//         )
+//     }
+// }
 
-export default BasicInfo
+// export default BasicInfo

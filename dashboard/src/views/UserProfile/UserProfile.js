@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
-// import { NavLink, Link } from 'react-router-dom';
 import './UserProfile.css';
-// import Router from '../../Router';
-
+import BasicInfo from './BasicInfo';
+import { Modal, Button } from 'antd';
 
 export class UserProfile extends Component {
+
+    constructor(){
+        super();
+        this.state = {
+            visible: false,    
+        };
+        
+    };
+
+    showModal = (visible) => {
+        this.setState({
+            visible
+        });
+    };
+
     render() {
 
         let { user } = this.props;
@@ -20,7 +34,25 @@ export class UserProfile extends Component {
                 <div className="header">User Profile</div>
                 <div className="profile">
                     <div className="userphoto">
-                        <img className="photo" src={user.img} aria-hidden alt="userphoto"/>
+                        <img className="photo" src={user.img} aria-hidden alt="userphoto" onClick={() => this.showModal(true)}/>
+                        <Modal className="modal"
+                            title="Personal Information"
+                            footer={[
+                                <Button onClick={() => this.showModal(false)}>Cancel</Button>
+                            ]}
+                            centered
+                            visible={this.state.visible}
+                            onCancel={() => this.showModal(false)}>
+                            <div className="personalInfo">
+                                <div>Name: {user.name}</div>
+                                <div>Gender: {user.gender}</div>
+                                <div>Age: {user.age}</div>
+                                <div>ID: {user.ID}</div>
+                                <div>Contact Number: {user.phone}</div>
+                                <div>Email: {user.email}</div>
+
+                            </div>
+                        </Modal>
                     </div>
                     <div className="info">
                         <div>Name: {user.name}</div>
