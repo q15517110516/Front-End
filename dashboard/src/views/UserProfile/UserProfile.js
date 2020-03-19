@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './UserProfile.css';
-import BasicInfo from './BasicInfo';
 import { Modal, Button } from 'antd';
 
 export class UserProfile extends Component {
@@ -45,10 +44,15 @@ export class UserProfile extends Component {
                             onCancel={() => this.showModal(false)}>
                             <div className="personalInfo">
                                 <div>Name: {user.name}</div>
+                                <br/>
                                 <div>Gender: {user.gender}</div>
+                                <br/>
                                 <div>Age: {user.age}</div>
+                                <br/>
                                 <div>ID: {user.ID}</div>
+                                <br/>
                                 <div>Contact Number: {user.phone}</div>
+                                <br/>
                                 <div>Email: {user.email}</div>
 
                             </div>
