@@ -1,0 +1,21 @@
+{
+    "products": [{
+            "title": "Apple",
+            "price": 12,
+            "id": 1,
+            "description": "Eat one everyday, may keep the doctor away"
+        },
+        {
+            "title": "Grape",
+            "price": 11,
+            "id": 2,
+            "description": "Wine is great, but grapes is even better"
+        },
+        {
+            "title": "Pineapple",
+            "price": 8,
+            "id": 3,
+            "description": "Enjoy but don't forget to peer first"
+        }
+    ]
+}
