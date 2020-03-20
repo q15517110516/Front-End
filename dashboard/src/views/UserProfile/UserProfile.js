@@ -37,33 +37,32 @@ export class UserProfile extends Component {
                         <Modal className="modal"
                             title="Personal Information"
                             footer={[
-                                <Button onClick={() => this.showModal(false)}>Cancel</Button>
+                                <Button key="cancel" onClick={() => this.showModal(false)}>Cancel</Button>
                             ]}
                             centered
                             visible={this.state.visible}
                             onCancel={() => this.showModal(false)}>
+                            
                             <div className="personalInfo">
-                                <div>Name: {user.name}</div>
-                                <br/>
-                                <div>Gender: {user.gender}</div>
-                                <br/>
-                                <div>Age: {user.age}</div>
-                                <br/>
-                                <div>ID: {user.ID}</div>
-                                <br/>
-                                <div>Contact Number: {user.phone}</div>
-                                <br/>
-                                <div>Email: {user.email}</div>
-
+                                <p>Name: {user.name}</p>
+                                <p>Gender: {user.gender}</p>
+                                <p>Age: {user.age}</p>
+                                <p>ID: {user.ID}</p>
+                                <p>Contact Number: {user.phone}</p>
+                                <p>Email: {user.email}</p>
                             </div>
+                            
                         </Modal>
                     </div>
+
                     <div className="info">
                         <div>Name: {user.name}</div>
                         <div>Gender: {user.gender}</div>
                         <div>Age: {user.age}</div>
                         <div>ID: {user.ID}</div>    
                     </div>
+
+                
                 </div>
                 
             </div>

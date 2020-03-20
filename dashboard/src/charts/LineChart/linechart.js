@@ -51,8 +51,6 @@ const draw = (props) => {
         tooltip.html(formatTime(d.date) + "<br />" + d.count)
             .style("left", (d3.event.pageX) + "px")
             .style("top", (d3.event.pageY) + "px");
-    
-    console.log(d.count)
     }
 
     // Add mouseout events
