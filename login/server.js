@@ -34,10 +34,10 @@ mongoose
     .catch(err => console.log(err));
 
 //Passport middleware
-app.use(passport.initialize());
+app.use(passport.initialize()); // initialize passport
 
 //Passport config
-require("./config/passport")(passport);
+require("./config/passport")(passport); 
 
 //Routes
 app.use("/api/users", users);

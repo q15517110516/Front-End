@@ -5,6 +5,7 @@ const User = mongoose.model("users");
 const keys = require("../config/keys");
 
 const opts = {};
+// Generate JWT request through configuration information and verify this token
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = keys.secretOrKey;
 
