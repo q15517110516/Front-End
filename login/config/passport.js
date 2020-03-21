@@ -12,11 +12,13 @@ opts.secretOrKey = keys.secretOrKey;
 module.exports = passport => {
     passport.use(
         new JwtStrategy(opts, (jwt_payload, done) => {
+            // After you have obtained the correponing content in the passport, you can inquire the obtained content.
             User.findById(jwt_payload.id)
-                .then(user => {
-                    if(user){
-                        return done(null, user);
+                .then(user => {  // Inquire that a user is returned
+                    if(user){  // Determine if the user exists
+                        return done(null, user);  // Return user back
                     }
+                    // Does not exist, return false
                     return done(null, false);
                 })
                 .catch(err => console.log(err));
