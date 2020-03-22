@@ -1,9 +1,11 @@
 import * as d3 from 'd3';
 import './style.css';
+import data from '../../data';
 
 const draw = (props) => {
     d3.select('.vis-barchart > *').remove();
-    const data = props.data;
+    // const data = props.data;
+    let dataset = [];
     const margin = {top: 20, right: 20, bottom: 30, left: 40};
     const width = props.width - margin.left - margin.right;
     const height = props.height - margin.top - margin.bottom;
@@ -15,7 +17,8 @@ const draw = (props) => {
 
     //format the data
     data.forEach(function(d){
-        d.age = +d.age;
+        dataset = data.activities;
+        console.log(dataset);
     });
 
     //Scle the range of the data in the domains
