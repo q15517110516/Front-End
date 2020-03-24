@@ -30,9 +30,7 @@ const draw = (props) => {
         }
         totalCount.name = data[i].name;
         totalCount.total = total;
-        totalPerMonth.push(totalCount);
-        console.log(total)
-        
+        totalPerMonth.push(totalCount);        
     }
 
     //Scle the range of the data in the domains
