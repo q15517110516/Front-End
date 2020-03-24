@@ -34,9 +34,6 @@ const draw = (props) => {
         console.log(total)
         
     }
-    // console.log(totalPerMonth);
-    
-    
 
     //Scle the range of the data in the domains
     let x = d3.scaleBand()
