@@ -4,17 +4,22 @@
 
 .profile {
     display: flex;
+    margin-top: 20px;
+    height: 120px;
+    align-items: center;
 }
 
-.profile>div {
-    margin-left: 10px;
-    margin-top: 16px;
-    width: 150px;
-    height: 120px;
+.userphoto {
+    text-align: center;
+}
+
+.userphoto,
+.info {
+    width: 148px;
 }
 
 .photo {
-    width: 120px;
+    width: 105px;
     height: 120px;
 }
 

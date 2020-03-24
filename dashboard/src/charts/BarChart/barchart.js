@@ -3,9 +3,8 @@ import './style.css';
 import data from '../../data';
 
 const draw = (props) => {
-    d3.select('.vis-barchart > *').remove();
-    // const data = props.data;
     let dataset = [];
+    d3.select('.vis-barchart > *').remove();
     const margin = {top: 20, right: 20, bottom: 30, left: 40};
     const width = props.width - margin.left - margin.right;
     const height = props.height - margin.top - margin.bottom;
@@ -17,9 +16,27 @@ const draw = (props) => {
 
     //format the data
     data.forEach(function(d){
-        dataset = data.activities;
-        console.log(dataset);
+        dataset.push(d.activities);
     });
+
+    //get the total amount
+    var totalPerMonth = [];
+    for(let i = 0; i < dataset.length; i++){
+        var total = 0;
+        var totalCount = {};
+        for(let j = 0; j < dataset[i].length; j++){
+            total += (dataset[i][j]).count;
+            
+        }
+        totalCount.name = data[i].name;
+        totalCount.total = total;
+        totalPerMonth.push(totalCount);
+        console.log(total)
+        
+    }
+    // console.log(totalPerMonth);
+    
+    
 
     //Scle the range of the data in the domains
     let x = d3.scaleBand()
@@ -28,17 +45,17 @@ const draw = (props) => {
 
     let y = d3.scaleLinear()
             .range([height,0]);
-    x.domain(data.map(function(d){
+    x.domain(totalPerMonth.map(function(d){
         return d.name;
     }));
-    y.domain([0, d3.max(data, function(d){
-        return d.age;
+    y.domain([0, d3.max(totalPerMonth, function(d){
+        return d.total;
     })])
 
 
     //append the rectangles for the bar chart
     svg.selectAll(".bar")
-        .data(data)
+        .data(totalPerMonth)
         .enter().append("rect")
         .attr("class", "bar")
         .attr("x", function(d){
@@ -46,10 +63,10 @@ const draw = (props) => {
         })
         .attr("width", x.bandwidth())
         .attr("y", function(d){
-            return y(d.age);
+            return y(d.total);
         })
         .attr("height", function(d){
-            return height - y(d.age);
+            return height - y(d.total);
         });
     
 

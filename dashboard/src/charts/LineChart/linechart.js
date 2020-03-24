@@ -31,11 +31,11 @@ const draw = (props) => {
 
     // Change time format
     var formatTime = d3.timeFormat("%e %B");
-
     data.forEach(function(d){
         
         d.date = d3.timeParse("%Y-%m-%d")(d.date);
         d.count = +d.count;
+        // console.log(d.count)
     });
     
     // Add mouseover events 
