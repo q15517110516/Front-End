@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Component} from 'react';
+import { Provider } from 'react-redux';
+import ToDoAppContainer from './containers/toDoAppContainer';
+import configureStore from './redux/configureStore';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const store = configureStore();
+
+class App extends Component {
+  render(){ // Every react component has a render method.
+    return( // Every render method returns jsx. Jsx looks like HTML, but it's actually javascript and functions a lot like xml, with self closing tags requiring the `/` within the tag in order to work propperly
+      <div>
+        <Provider store ={store}>
+          <ToDoAppContainer />
+        </Provider>
+        
+      </div>
+    );
+  }
 }
 
 export default App;
