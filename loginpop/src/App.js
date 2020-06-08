@@ -13,6 +13,7 @@ class App extends Component {
       value: e.target.value
     });
   }
+
   submit = (e) => {
     alert("Hello" + this.state.value);
     e.preventDefault();
@@ -22,7 +23,7 @@ class App extends Component {
       <div>
         Username
         <input type="text" onChange={this.handleChange} value={this.state.value}/>
-        >Password
+        Password
         <input type="text"/>
         <button type="submit" onClick={this.submit}>Submit</button>
       </div>
